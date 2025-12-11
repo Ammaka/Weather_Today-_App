@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.8.9
+Built-By: jnduka
+Build-Jdk: 21.0.5
+Implementation-Title: Weather_Today
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: weather_today.java
+Implementation-URL: https://spring.io/projects/spring-boot/Weather_Today
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: WeatherToday.Server.WeatherServer
+Spring-Boot-Version: 2.7.4
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+

@@ -26,6 +26,7 @@ public class App {
              city = scanner.nextLine();
         }
 
+
         String EncodedCity = URLEncoder.encode(city, UTF_8);
 
         //converts the country entered to pascal case with underscored between
@@ -55,8 +56,8 @@ public class App {
             System.out.println(finReport.getCoord().toString());
             System.out.println(finReport.getMain().toString());
             System.out.println(finReport.getMain().printHumidity());
-            System.out.println(finReport.getWeather().getFirst().getMain());
-            System.out.println(finReport.getWeather().getLast().getDescription());
+            System.out.println(finReport.getWeather().get(0).getMain());
+            System.out.println(finReport.getWeather().get(0).getDescription());
             System.out.println(finReport.getSys().getSunrise());
             System.out.println(finReport.getSys().getSunset());
 

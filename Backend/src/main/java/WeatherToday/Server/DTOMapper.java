@@ -19,8 +19,8 @@ public class DTOMapper {
                 wholeReport.getMain().getHumidity(),// humidity
                 wholeReport.getSys().getSunrise(),
                 wholeReport.getSys().getSunset(),
-                wholeReport.getWeather().getFirst().getMain(),                           // weather main
-                wholeReport.getWeather().getFirst().getDescription()// weather description
+                wholeReport.getWeather().get(0).getMain(),                           // weather main
+                wholeReport.getWeather().get(0).getDescription()// weather description
 
         );
     }
