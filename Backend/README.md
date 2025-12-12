@@ -16,12 +16,7 @@ This Java application acts as a simple and secure bridge between the Flutter cli
 
 ## How to Run
 
-1.  **Prerequisites:**
-    *   Java (JDK 17 or newer)
-    *   Maven 
-
-2.  **Configuration:**
-    *   You must add your own API key for the external weather service.
-    * use the example .env file for this
-    *   Set the required properties
-        
+-clone the repo
+-build the docker image
+-run the docker image (provide your API key as a query)
+-proceed to the FE
