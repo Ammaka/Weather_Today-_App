@@ -4,8 +4,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:weather_today_app/models/WeatherResponse.dart';
 
+//take note base_Url for emulator is "http://10.0.2.2:8080"
 class WeatherApi{
-static const String  base_Url = "http://10.0.2.2:8080";
+static const String  base_Url = "http://localhost:8080";
 
 
 Future<Weatherresponse> fetchWeather({

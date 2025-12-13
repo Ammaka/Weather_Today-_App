@@ -14,7 +14,7 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Weather Client',
+      title: 'Weather Today',
       theme: ThemeData(
         useMaterial3: true,
       ),
