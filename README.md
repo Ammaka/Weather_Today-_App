@@ -23,5 +23,6 @@ have the following installed:
 how to run
 - clone the repo
 - cd to the repo
+- edit the dockercompose.yml (by entering your API_KEY)
 - docker compose up --build
 
