@@ -17,7 +17,7 @@ This app allows users to get the current weather for any location. It features a
 
 ## How to Run
 
-1.  **Start the Java Backend:** Make sure the backend server is running first.
+1.  **Start the Java Backend locally:** Make sure the backend server is running first.
 2.  **Install Dependencies:**
 3.  **Run the flutter App:**
     
