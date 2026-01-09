@@ -24,5 +24,6 @@ how to run
 - clone the repo
 - cd to the repo
 - edit the dockercompose.yml (by entering your API_KEY)
+- ensure your docker engine is running
 - docker compose up --build
 
