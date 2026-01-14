@@ -5,9 +5,12 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Service
 public class ApiService {
@@ -26,8 +29,9 @@ public class ApiService {
         final String baseUrl =dotenv.get("BASE_url");
         final String apiKey =dotenv.get("API_KEY");
 
+        String EncodedCity = URLEncoder.encode(city, UTF_8);
         //appends the city and isocode to the url
-        String finalUrl = String.format(baseUrl, city, isoCode, apiKey);
+        String finalUrl = String.format(baseUrl, EncodedCity, isoCode, apiKey);
 
         //sends the api request
         HttpRequest request= HttpRequest.newBuilder()

@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080"  
     environment:
-      - API_KEY=your_api_key_here  
+      - API_KEY=d5fac93e06b1cbad8673bed78b05e46d
     networks:
       - app-network  # Assign to the app network
   
