@@ -15,9 +15,4 @@ This app allows users to get the current weather for any location. It features a
 *   **Clean UI:** A straightforward two-page navigation flow.
 *   **Unit Selection:** Allows users to choose their preferred measurement units (like Celsius or Fahrenheit).
 
-## How to Run
 
-1.  **Start the Java Backend:** Make sure the backend server is running first.
-2.  **Install Dependencies:**
-3.  **Run the flutter App:**
-    

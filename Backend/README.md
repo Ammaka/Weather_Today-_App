@@ -14,9 +14,3 @@ This Java application acts as a simple and secure bridge between the Flutter cli
 *   **Secure API Key:** Keeps the external weather service API key safe on the server.
 *   **Data Processing:** Formats data cleanly before sending it to the Flutter app.
 
-## How to Run
-
--clone the repo
--build the docker image
--run the docker image (provide your API key as a query)
--proceed to the FE
