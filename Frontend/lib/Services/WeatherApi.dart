@@ -7,7 +7,7 @@ import 'package:weather_today_app/models/WeatherResponse.dart';
 //take note base_Url for emulator is "http://10.0.2.2:8080"
 //base url for web http://localhost:8080";
 class WeatherApi{
-static const String  base_Url = "http://localhost:8080";
+static const String  base_Url = "http://10.0.2.2:8080";
 
 
 Future<Weatherresponse> fetchWeather({
@@ -20,12 +20,19 @@ Future<Weatherresponse> fetchWeather({
       "country":country,
     },
   );
-
   final response = await http.get(uri);
   if (response.statusCode==200) {
     final Map<String,dynamic> jsonBody= json.decode(response.body);
     return Weatherresponse.fromJson(jsonBody);
-  } else{
+  }
+  else if(city.isEmpty || country.isEmpty){
+    throw Exception("Please enter both city and country");
+  }
+  else if(response.statusCode==404){
+    throw Exception(
+        "Enter the correct City(${response.statusCode}) : ${response.body}");
+  }
+    else{
     throw Exception(
       "failed to load weather(${response.statusCode}) : ${response.body}"
     );
