@@ -34,7 +34,7 @@ Future<Weatherresponse> fetchWeather({
   }
     else{
     throw Exception(
-      "failed to load weather(${response.statusCode}) : ${response.body}"
+      "Error ${response.statusCode}\n pls ensure that the city and country are correct"
     );
   }
 }

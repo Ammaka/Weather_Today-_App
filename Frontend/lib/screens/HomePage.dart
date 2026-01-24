@@ -87,11 +87,25 @@ class _WeatherScreenState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(child: Image.asset('assets/Night Changes.jpg', fit: BoxFit.cover,)),
-          // 🔹 Background image
+          Positioned.fill(child: Image.asset('assets/download.jpg', fit: BoxFit.cover,)),
 
+          Positioned(
+            top: 170,
+            left: 0,
+            right: 0,
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(
+                'Welcome',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black.withOpacity(0.7),
+                ),
+              ),
+            ),
+          ),
 
-          // 🔹 Foreground content (your existing UI)
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,36 +116,73 @@ class _WeatherScreenState extends State<HomePage> {
                   child: Column(
                     children: [
                       TextField(
+                        autofocus: true,
                         controller: _cityController,
+                        cursorColor: Colors.black,
                         decoration:  InputDecoration(
-                          labelText: 'City',
+                          hintText: 'city',
+                          hintStyle: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black45),
                           prefixIcon: Icon(Icons.location_city),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide(color: Colors.blueAccent),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
                           filled: true,
-                          fillColor: Colors.white.withOpacity(0.4),
+                          fillColor: Colors.white.withOpacity(0.7),
                         ),
                       ),
+
                       const SizedBox(height: 25),
                       TextField(
+                        autofocus: true,
                         controller: _countryController,
+                        cursorColor: Colors.black,
                         decoration:  InputDecoration(
-                          labelText: 'Country',
+                          hintText: 'country',
+                          hintStyle: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black45),
                           prefixIcon: Icon(Icons.location_on),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                           ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
                           filled: true,
-                          fillColor: Colors.white.withOpacity(0.4),
+                          fillColor: Colors.white.withOpacity(0.7),
                         ),
+
                       ),
+
                       const SizedBox(height: 24),
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black87,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
                         onPressed: _isLoading ? null : _getWeather,
                         child: _isLoading
-                            ? const CircularProgressIndicator()
-                            : const Text('Search'),
+                            ? const CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
+                        )
+                            : const Text('Search', style: TextStyle(color: Colors.white)),
                       ),
 
                       if (_error != null) ...[
@@ -139,6 +190,7 @@ class _WeatherScreenState extends State<HomePage> {
                         Text(
                           _error!,
                           style:  TextStyle(
+                            fontWeight: FontWeight.bold,
                             color: Colors.red,
                             fontSize: 20,
                           ),
